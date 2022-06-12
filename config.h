@@ -303,6 +303,8 @@ static const char *dmenucmd[] = {
 	"-nf", normfgcolor,
 	"-sb", selbgcolor,
 	"-sf", selfgcolor,
+    "-l" , "15",
+    "-c" , NULL,
 	NULL
 };
 static const char *termcmd[]  = { "st", NULL };
@@ -431,9 +433,10 @@ static Key keys[] = {
     { MODKEY,                       XK_F4,        spawn,                  SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
 	{ MODKEY,                       XK_F5,         xrdb,                  {.v = NULL } },
     { MODKEY,                       XK_F6,        spawn,                  SHCMD("dmenu_displayselect") },
-    { MODKEY,                       XK_F7,        spawn,                  SHCMD("dmenu_mount") },
+    { MODKEY,                       XK_F7,        spawn,                  SHCMD("networkmanager_dmenu") },
     { MODKEY,                       XK_F8,        spawn,                  SHCMD("dunst_toggle") },
     { MODKEY,                       XK_F9,        spawn,                  SHCMD("wifi_toggle") },
+    { MODKEY,                       XK_F10,       spawn,                  SHCMD("dmenu_mount") },
 
 	{ MODKEY,                       XK_space,      cyclelayout,            {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_space,      cyclelayout,            {.i = +1 } },
