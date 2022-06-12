@@ -1,15 +1,22 @@
-# Important
+# My Personalized dwm Build
 
-To xrdb patch to work, we need to edit [`patches/xrdb.c`](patches/xrdb.c), comment out the load function, as in:
+This is my customized suckless [dwm](https://dwm.suckless.org/) build.
+
+Most of the patches has been choosen with [flexipatch](https://github.com/bakkeby/dwm-flexipatch).
+
+# Important note on xrdb patch
+
+The xrdb patch only works if we edit [`patches/xrdb.c`](patches/xrdb.c), comment out the original load function, as in:
 ```c++
 			/**     XRDB_LOAD_COLOR("dwm.normfgcolor", normfgcolor); */
 ```
 
-and replace it with
+and replace them with
 
 ```c++
 				XRDB_LOAD_COLOR("dwm.color6", normfgcolor);
 ```
+
 The code to replace with is:
 
 ```c++
